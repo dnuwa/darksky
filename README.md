@@ -1,6 +1,13 @@
 # darksky
 A simple web app that displays the prevailing weather condition(s) at the current location using the Dark Sky API. Determine and display the main weather right now in your location. 
 
+## How to run the application
+
+- git clone `https://github.com/dnuwa/darksky.git`
+- run the command `npm run install`
+- a web page will load in the browser
+- enter the longitude and latitude of the location whose weather you would want to checkout 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
