@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Weather from "./app_components/weather_component";
+import Weather from "./weather_component";
 
 describe("<Weather />", () => {
   it("renders app page", () => {

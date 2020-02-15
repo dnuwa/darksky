@@ -1,9 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { shallow } from "enzyme";
 import App from './App';
 
-test('renders app page correctly', () => {
-  const { getByText } = render(<App />);
-  const buttonElement = getByText(/Get Weather/);
-  expect(buttonElement).toBeInTheDocument();
+describe("<App />", () => {
+  it('renders without crashing', () => {
+    const comp = shallow(<App />);
+
+    expect(comp.find('button')).toMatchSnapshot();
+    expect(comp.find('form')).toMatchSnapshot();
+  });
 });

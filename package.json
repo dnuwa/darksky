@@ -3,23 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "babel-core": "^7.0.0-bridge.0",
     "bootstrap": "^4.4.1",
-    "puppeteer": "^2.1.1",
+    "coveralls": "^3.0.9",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.1",
     "react-skycons": "^0.7.0",
+    "react-test-renderer": "^16.12.0",
+    "save-dev": "0.0.1-security",
     "weather-icons": "git+https://github.com/erikflowers/weather-icons.git"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom --watchAll=false",
     "eject": "react-scripts eject",
-    "test:cov": "jest --coverage --env='jsdom'"
+    "coverage": "react-scripts test --env=jsdom --coverage --watchAll=false",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,28 +46,5 @@
   "devDependencies": {
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "setupFiles": [
-      "./src/setupTests.js"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}",
-      "!src/setupTests.js",
-      "!src/index.js",
-      "!src/store/index.js"
-    ],
-    "testEnvironment": "jsdom",
-    "preset": "jest-puppeteer",
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less|scss)$": "identity-obj-proxy"
-    },
-    "modulePaths": [
-      "<rootDir>/src"
-    ]
   }
 }
