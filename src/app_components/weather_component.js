@@ -3,7 +3,6 @@ import Skycons from 'react-skycons'
 
 export default function weather_component( props ) {
 
-
     // (['CLEAR_DAY','CLEAR_NIGHT','PARTLY_CLOUDY_DAY','PARTLY_CLOUDY_NIGHT','CLOUDY','RAIN','SLEET','SNOW','WIND','FOG'])
     let icon = props.weatherIcon;
 
@@ -49,9 +48,8 @@ export default function weather_component( props ) {
             icon = <Skycons color='white' style={defaultStyle} icon='WIND' autoplay={true} />;
             break;
 
-        case icon === 'fog':
+        default:
             icon = <Skycons color='white' style={defaultStyle} icon='FOG' autoplay={true} />;
-            break;
     }
 
     return (
