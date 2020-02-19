@@ -2,7 +2,9 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
+version: 2.1
+orbs:
+  coveralls: coveralls/coveralls@1.0.4  
 jobs:
   build:
     docker:
@@ -14,7 +16,7 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    working_directory: ~/repo
+    working_directory: ~/darksky
 
     steps:
       - checkout
@@ -32,6 +34,19 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+          name: "What branch am I on?"
+          command: echo ${CIRCLE_BRANCH}
+
+
 
       # run tests!
-      - run: yarn test
+      - run: yarn coverage
+
+      - coveralls/upload:
+          parallel: true
+          flag_name: Test 1
+
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
+
