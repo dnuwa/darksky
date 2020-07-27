@@ -1,4 +1,4 @@
-# darksky               [![CircleCI](https://circleci.com/gh/dnuwa/darksky/tree/develop.svg?style=svg)](https://circleci.com/gh/Snow-Media-Technologies/filmo-backend/tree/develop)              [![Coverage Status](https://coveralls.io/repos/github/dnuwa/darksky/badge.svg?branch=develop)](https://coveralls.io/github/dnuwa/darksky?branch=develop)
+# darksky               [![CircleCI](https://circleci.com/gh/dnuwa/darksky/tree/develop.svg?style=svg)](https://circleci.com/gh/Snow-Media-Technologies/filmo-backend/tree/develop)             [![Coverage Status](https://coveralls.io/repos/github/dnuwa/book-app/badge.svg?branch=develop)](https://coveralls.io/github/dnuwa/book-app?branch=develop)
 A simple web app that displays the prevailing weather condition(s) at the current location using the Dark Sky API. Determine and display the main weather right now in your location. 
 
 ## Todo before running the application
